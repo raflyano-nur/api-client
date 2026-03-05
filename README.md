@@ -6,6 +6,7 @@ Project ini juga bisa menyimpan collection request dalam format **JSON**.
 ## Fitur
 
 * Test API Endpoint
+* Import Collection JSON dari postman
 * Export Collection JSON
 * Proxy API request
 * Simpan konfigurasi website
