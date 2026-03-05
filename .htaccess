@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# sembunyikan .php extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^\.]+)$ $1.php [L]
+
+# redirect jika user mengetik .php
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?]
+RewriteRule ^ %1 [R=301,L]
+
+# root → index.php
+DirectoryIndex index.php

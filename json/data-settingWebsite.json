@@ -1,0 +1,9 @@
+{
+    "app_name": "Raflyano API Client",
+    "app_version": "1.0.0",
+    "app_description": "Ini API client untuk yang laptopnya kentang",
+    "author": "Raflyano",
+    "base_url": "http:\/\/localhost:8000\/api",
+    "default_timeout": 5000,
+    "theme": "dark"
+}
