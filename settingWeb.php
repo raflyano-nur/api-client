@@ -413,7 +413,7 @@ $currentDir = $jsonDirectory;
                             <i class="fas fa-server text-indigo-400 text-xs"></i> Proxy URL
                             <span class="text-[10px] text-gray-500">(used for all requests)</span>
                         </label>
-                        <input id="proxy_url" type="text" placeholder="/proxy.php"
+                        <input id="proxy_url" type="text" placeholder="/proxy"
                             class="input-dark w-full px-4 py-2.5 rounded-lg font-mono text-sm">
                     </div>
                     <div>
@@ -567,7 +567,7 @@ $currentDir = $jsonDirectory;
         currentFile = fileSelect.value;
         try {
             const url =
-                `fetch_json.php?dir=${encodeURIComponent(currentDirectory)}&file=${encodeURIComponent(currentFile)}`;
+                `fetch_json?dir=${encodeURIComponent(currentDirectory)}&file=${encodeURIComponent(currentFile)}`;
             const res = await fetch(url);
             if (!res.ok) throw new Error(`HTTP ${res.status}`);
             const data = await res.json();
@@ -587,7 +587,7 @@ $currentDir = $jsonDirectory;
         document.getElementById('theme').value = ['dark', 'light'].includes(data.theme) ? data.theme : 'dark';
 
         // Network
-        document.getElementById('proxy_url').value = data.proxy_url || '/proxy.php';
+        document.getElementById('proxy_url').value = data.proxy_url || '/proxy';
         document.getElementById('default_timeout').value = data.default_timeout != null ? data.default_timeout : 5000;
 
         // Request defaults
@@ -644,7 +644,7 @@ $currentDir = $jsonDirectory;
         }
         const data = getFormData();
         try {
-            const res = await fetch("save_json.php", {
+            const res = await fetch("save_json", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -691,7 +691,7 @@ $currentDir = $jsonDirectory;
             return;
         }
         try {
-            const res = await fetch(`list_files.php?dir=${encodeURIComponent(newDir)}`);
+            const res = await fetch(`list_files?dir=${encodeURIComponent(newDir)}`);
             const result = await res.json();
             if (result.status === 'success') {
                 currentDirectory = newDir;
