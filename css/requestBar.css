@@ -1,0 +1,120 @@
+/* ─── REQUEST BAR ─── */
+    .req-bar {
+        height: var(--reqbar-h);
+        padding: 8px 12px;
+        background: var(--pm-surface);
+        border-bottom: 1px solid var(--pm-border);
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .method-sel {
+        background: var(--pm-surface2);
+        border: 1px solid var(--pm-border);
+        border-radius: var(--pm-radius);
+        font-family: var(--pm-mono);
+        font-size: 11px;
+        font-weight: 700;
+        padding: 0 10px;
+        cursor: pointer;
+        outline: none;
+        height: 32px;
+        min-width: 90px;
+        color: var(--pm-GET);
+        transition: border-color .15s;
+        appearance: none;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5' fill='%23686868'%3E%3Cpath d='M0 0l4 5 4-5z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 8px center;
+        padding-right: 22px;
+    }
+
+    .method-sel:focus {
+        border-color: var(--pm-orange);
+    }
+
+    .method-sel option {
+        background: var(--pm-surface2);
+        color: var(--pm-text);
+    }
+
+    .url-wrap {
+        flex: 1;
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .url-input {
+        width: 100%;
+        height: 32px;
+        padding: 0 10px;
+        background: var(--pm-bg);
+        border: 1px solid var(--pm-border);
+        border-radius: var(--pm-radius);
+        color: var(--pm-text);
+        font-family: var(--pm-mono);
+        font-size: 12px;
+        outline: none;
+        transition: border-color .15s;
+    }
+
+    .url-input::placeholder {
+        color: var(--pm-text3);
+    }
+
+    .url-input:focus {
+        border-color: var(--pm-orange);
+    }
+
+    .send-btn {
+        height: 32px;
+        padding: 0 20px;
+        background: var(--pm-orange);
+        color: #fff;
+        border: none;
+        border-radius: var(--pm-radius);
+        font-weight: 600;
+        font-size: 12px;
+        font-family: var(--pm-font);
+        cursor: pointer;
+        transition: background .15s;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .send-btn:hover {
+        background: var(--pm-orange2);
+    }
+
+    .send-btn.loading {
+        opacity: .6;
+        pointer-events: none;
+    }
+
+    .send-btn svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .spinner {
+        width: 16px;
+        height: 16px;
+        border: 2px solid var(--pm-border2);
+        border-top-color: var(--pm-orange);
+        border-radius: 50%;
+        animation: spin .7s linear infinite;
+        display: none;
+        flex-shrink: 0;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }

@@ -1,0 +1,63 @@
+/* ─── AUTH ─── */
+    .auth-wrap {
+        padding: 10px 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .auth-type-sel {
+        background: var(--pm-surface2);
+        border: 1px solid var(--pm-border);
+        border-radius: var(--pm-radius);
+        color: var(--pm-text);
+        font-size: 11px;
+        padding: 6px 10px;
+        outline: none;
+        width: 100%;
+        font-family: var(--pm-font);
+        transition: border-color .15s;
+    }
+
+    .auth-type-sel:focus {
+        border-color: var(--pm-orange);
+    }
+
+    .auth-type-sel option {
+        background: var(--pm-surface2);
+    }
+
+    .form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .form-field label {
+        font-size: 10px;
+        color: var(--pm-text3);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .form-field input {
+        background: var(--pm-bg);
+        border: 1px solid var(--pm-border);
+        border-radius: var(--pm-radius);
+        color: var(--pm-text);
+        font-size: 11px;
+        padding: 6px 10px;
+        outline: none;
+        font-family: var(--pm-mono);
+        transition: border-color .15s;
+        width: 100%;
+    }
+
+    .form-field input:focus {
+        border-color: var(--pm-orange);
+    }
+
+    .form-field input::placeholder {
+        color: var(--pm-text3);
+    }

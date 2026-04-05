@@ -1,0 +1,191 @@
+/* ─── COLLECTION TREE ─── */
+    .col-group {
+        margin-bottom: 2px;
+    }
+
+    .col-header {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 6px;
+        border-radius: var(--pm-radius);
+        cursor: pointer;
+        color: var(--pm-text2);
+        font-weight: 600;
+        font-size: 11px;
+        transition: background .1s;
+        user-select: none;
+    }
+
+    .col-header:hover {
+        background: var(--pm-surface2);
+        color: var(--pm-text);
+    }
+
+    .tree-arrow {
+        width: 14px;
+        height: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: transform .15s;
+        color: var(--pm-text3);
+    }
+
+    .tree-arrow svg {
+        width: 8px;
+        height: 8px;
+    }
+
+    .tree-arrow.open {
+        transform: rotate(90deg);
+    }
+
+    .col-icon {
+        font-size: 12px;
+        flex-shrink: 0;
+    }
+
+    .col-name {
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .col-menu {
+        opacity: 0;
+        background: none;
+        border: none;
+        color: var(--pm-text3);
+        cursor: pointer;
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-size: 12px;
+        flex-shrink: 0;
+        line-height: 1;
+        letter-spacing: 1.5px;
+        transition: opacity .1s, color .1s, background .1s;
+    }
+
+    .col-header:hover .col-menu,
+    .folder-header:hover .col-menu,
+    .req-item:hover .col-menu {
+        opacity: 1;
+    }
+
+    .col-menu:hover {
+        color: var(--pm-text);
+        background: var(--pm-surface3);
+    }
+
+    .col-body {
+        padding-left: 8px;
+        display: none;
+    }
+
+    .col-body.open {
+        display: block;
+    }
+
+    .folder-group {
+        margin-bottom: 1px;
+    }
+
+    .folder-header {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 4px 6px;
+        border-radius: var(--pm-radius);
+        cursor: pointer;
+        color: var(--pm-text3);
+        font-size: 11px;
+        font-weight: 500;
+        transition: background .1s;
+        user-select: none;
+    }
+
+    .folder-header:hover {
+        background: var(--pm-surface2);
+        color: var(--pm-text2);
+    }
+
+    .folder-body {
+        padding-left: 8px;
+        display: none;
+    }
+
+    .folder-body.open {
+        display: block;
+    }
+
+    .req-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 6px;
+        border-radius: var(--pm-radius);
+        cursor: pointer;
+        color: var(--pm-text2);
+        font-size: 11px;
+        transition: background .1s;
+        user-select: none;
+    }
+
+    .req-item:hover {
+        background: var(--pm-surface2);
+        color: var(--pm-text);
+    }
+
+    .req-item.active {
+        background: rgba(255, 108, 55, .12);
+        color: var(--pm-text);
+        border-left: 2px solid var(--pm-orange);
+        padding-left: 4px;
+    }
+
+    .req-name {
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .method-badge {
+        font-family: var(--pm-mono);
+        font-size: 7.5px;
+        font-weight: 700;
+        padding: 1px 4px;
+        border-radius: 3px;
+        min-width: 36px;
+        text-align: center;
+        flex-shrink: 0;
+        letter-spacing: 0.3px;
+    }
+
+    .m-GET {
+        background: rgba(107, 189, 91, .15);
+        color: var(--pm-GET);
+    }
+
+    .m-POST {
+        background: rgba(245, 166, 35, .15);
+        color: var(--pm-POST);
+    }
+
+    .m-PUT {
+        background: rgba(74, 158, 255, .15);
+        color: var(--pm-PUT);
+    }
+
+    .m-PATCH {
+        background: rgba(201, 123, 255, .15);
+        color: var(--pm-PATCH);
+    }
+
+    .m-DELETE {
+        background: rgba(248, 81, 73, .15);
+        color: var(--pm-DELETE);
+    }

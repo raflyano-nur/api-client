@@ -1,0 +1,22 @@
+/* ─── EMPTY ─── */
+    .empty {
+        text-align: center;
+        padding: 28px 12px;
+        color: var(--pm-text3);
+    }
+
+    .empty svg {
+        width: 32px;
+        height: 32px;
+        opacity: .3;
+        margin-bottom: 8px;
+    }
+
+    .empty p {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .empty b {
+        color: var(--pm-text2);
+    }

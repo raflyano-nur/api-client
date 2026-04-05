@@ -1,0 +1,6 @@
+/* ─── LAYOUT ─── */
+    .app-body {
+        display: flex;
+        height: calc(100vh - var(--topbar-h) - var(--tab-h));
+        overflow: hidden;
+    }

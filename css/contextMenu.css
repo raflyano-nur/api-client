@@ -1,0 +1,55 @@
+/* ─── CONTEXT MENU ─── */
+    .ctx-menu {
+        position: fixed;
+        background: var(--pm-surface2);
+        border: 1px solid var(--pm-border2);
+        border-radius: var(--pm-radius);
+        box-shadow: 0 8px 28px rgba(0, 0, 0, .5);
+        z-index: 9999;
+        min-width: 180px;
+        padding: 3px;
+        display: none;
+    }
+
+    .ctx-menu.open {
+        display: block;
+    }
+
+    .ctx-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 12px;
+        color: var(--pm-text2);
+        transition: background .1s, color .1s;
+        white-space: nowrap;
+    }
+
+    .ctx-item:hover {
+        background: var(--pm-surface3);
+        color: var(--pm-text);
+    }
+
+    .ctx-item.danger {
+        color: #f87171;
+    }
+
+    .ctx-item.danger:hover {
+        background: rgba(248, 81, 73, .15);
+        color: #fca5a5;
+    }
+
+    .ctx-sep {
+        height: 1px;
+        background: var(--pm-border);
+        margin: 3px 0;
+    }
+
+    .ctx-item-icon {
+        width: 14px;
+        text-align: center;
+        flex-shrink: 0;
+    }

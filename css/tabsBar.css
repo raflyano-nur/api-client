@@ -1,0 +1,121 @@
+/* ─── TABS BAR ─── */
+    .tabs-bar {
+        height: var(--tab-h);
+        background: #1a1a1a;
+        border-bottom: 1px solid var(--pm-border);
+        display: flex;
+        align-items: stretch;
+        overflow-x: auto;
+        overflow-y: hidden;
+        flex-shrink: 0;
+        scrollbar-width: none;
+    }
+
+    .tabs-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .vtab {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 0 12px;
+        min-width: 130px;
+        max-width: 190px;
+        height: var(--tab-h);
+        cursor: pointer;
+        border-right: 1px solid var(--pm-border);
+        color: var(--pm-text3);
+        font-size: 11px;
+        flex-shrink: 0;
+        user-select: none;
+        position: relative;
+        transition: background .1s, color .1s;
+    }
+
+    .vtab:hover {
+        background: var(--pm-surface);
+        color: var(--pm-text2);
+    }
+
+    .vtab.active {
+        background: var(--pm-surface2);
+        color: var(--pm-text);
+    }
+
+    .vtab.active::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--pm-orange);
+    }
+
+    .vtab-method {
+        font-family: var(--pm-mono);
+        font-size: 8px;
+        font-weight: 700;
+        padding: 1px 4px;
+        border-radius: 3px;
+        flex-shrink: 0;
+        letter-spacing: 0.3px;
+    }
+
+    .vtab-name {
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .vtab.dirty .vtab-name::after {
+        content: '●';
+        font-size: 7px;
+        color: var(--pm-orange);
+        margin-left: 4px;
+        vertical-align: middle;
+    }
+
+    .vtab-close {
+        width: 14px;
+        height: 14px;
+        border-radius: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        color: var(--pm-text3);
+        flex-shrink: 0;
+        opacity: 0;
+        transition: opacity .1s, background .1s, color .1s;
+    }
+
+    .vtab:hover .vtab-close,
+    .vtab.dirty .vtab-close {
+        opacity: 1;
+    }
+
+    .vtab-close:hover {
+        background: rgba(248, 81, 73, .25);
+        color: var(--pm-red);
+    }
+
+    .vtab-action {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: var(--tab-h);
+        cursor: pointer;
+        color: var(--pm-text3);
+        font-size: 16px;
+        flex-shrink: 0;
+        transition: color .1s, background .1s;
+    }
+
+    .vtab-action:hover {
+        color: var(--pm-text);
+        background: var(--pm-surface);
+    }
