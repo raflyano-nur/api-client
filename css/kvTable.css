@@ -1,0 +1,112 @@
+    /* ─── KV TABLE ─── */
+    .kv-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .kv-table th {
+        text-align: left;
+        padding: 6px 8px;
+        font-size: 10px;
+        font-weight: 600;
+        color: var(--pm-text3);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid var(--pm-border);
+        background: var(--pm-surface);
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .kv-table td {
+        padding: 2px 4px;
+        border-bottom: 1px solid var(--pm-border);
+        vertical-align: middle;
+    }
+
+    .kv-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .kv-table tr:hover td {
+        background: var(--pm-surface2);
+    }
+
+    .kv-check {
+        width: 14px;
+        height: 14px;
+        accent-color: var(--pm-orange);
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    .kv-field {
+        width: 100%;
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        color: var(--pm-text);
+        font-family: var(--pm-mono);
+        font-size: 11px;
+        padding: 4px 6px;
+        outline: none;
+        transition: border-color .1s, background .1s;
+    }
+
+    .kv-field::placeholder {
+        color: var(--pm-text3);
+    }
+
+    .kv-field:focus {
+        border-color: var(--pm-orange);
+        background: var(--pm-bg);
+    }
+
+    .kv-del {
+        background: none;
+        border: none;
+        color: var(--pm-text3);
+        cursor: pointer;
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-size: 12px;
+        opacity: 0;
+        transition: opacity .1s, color .1s;
+    }
+
+    tr:hover .kv-del {
+        opacity: 1;
+    }
+
+    .kv-del:hover {
+        color: var(--pm-red);
+    }
+
+    .kv-add-row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 8px;
+        color: var(--pm-text3);
+        font-size: 11px;
+        cursor: pointer;
+        border-top: 1px solid var(--pm-border);
+        background: transparent;
+        width: 100%;
+        font-family: var(--pm-font);
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        text-align: left;
+        transition: color .1s;
+    }
+
+    .kv-add-row:hover {
+        color: var(--pm-orange);
+    }
+
+    .kv-add-row svg {
+        width: 12px;
+        height: 12px;
+    }

@@ -1,0 +1,14 @@
+/* ─── MISC ─── */
+    .no-select {
+        user-select: none;
+    }
+
+    .flex-row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .flex-1 {
+        flex: 1;
+    }

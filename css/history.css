@@ -1,0 +1,34 @@
+/* ─── HISTORY ─── */
+    .hist-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 6px;
+        border-radius: var(--pm-radius);
+        cursor: pointer;
+        border-bottom: 1px solid var(--pm-border);
+        transition: background .1s;
+    }
+
+    .hist-item:hover {
+        background: var(--pm-surface2);
+    }
+
+    .hist-info {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .hist-url {
+        font-size: 10px;
+        color: var(--pm-text2);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .hist-meta {
+        font-size: 9px;
+        color: var(--pm-text3);
+        margin-top: 1px;
+    }

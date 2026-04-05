@@ -1,0 +1,14 @@
+/* ─── RESIZER ─── */
+    .sidebar-resizer {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        cursor: col-resize;
+        z-index: 10;
+    }
+
+    .sidebar-resizer:hover {
+        background: var(--pm-orange);
+    }

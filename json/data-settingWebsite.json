@@ -3,7 +3,21 @@
     "app_version": "1.0.0",
     "app_description": "Ini API client untuk yang laptopnya kentang",
     "author": "Raflyano",
-    "base_url": "http:\/\/localhost:8000\/api",
+    "theme": "dark",
+    "proxy_url": "/proxy.php",
     "default_timeout": 5000,
-    "theme": "dark"
+    "default_method": "GET",
+    "default_body_mode": "raw",
+    "default_auth_type": "none",
+    "available_methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+    ],
+    "history_max_items": 100,
+    "sidebar_width": 260,
+    "accent_color": "#ff6c37",
+    "show_shortcut_hints": true
 }

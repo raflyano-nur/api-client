@@ -1,0 +1,137 @@
+/* ─── JSON SYNTAX ─── */
+    .jk {
+        color: #e06c75;
+    }
+
+    .js {
+        color: #98c379;
+    }
+
+    .jn {
+        color: #56b6c2;
+    }
+
+    .jb {
+        color: #c678dd;
+    }
+
+    .jnull {
+        color: #5c6370;
+    }
+
+    /* ─── MODALS ─── */
+    .modal-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, .75);
+        z-index: 9000;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-overlay.open {
+        display: flex;
+    }
+
+    .modal-box {
+        background: var(--pm-surface);
+        border: 1px solid var(--pm-border2);
+        border-radius: 8px;
+        width: 500px;
+        max-width: 90vw;
+        max-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, .6);
+    }
+
+    .modal-head {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--pm-border);
+    }
+
+    .modal-head h2 {
+        font-size: 13px;
+        font-weight: 600;
+        flex: 1;
+    }
+
+    .modal-close {
+        background: none;
+        border: none;
+        color: var(--pm-text3);
+        font-size: 16px;
+        cursor: pointer;
+        padding: 2px 6px;
+        border-radius: 3px;
+        transition: color .1s;
+    }
+
+    .modal-close:hover {
+        color: var(--pm-red);
+    }
+
+    .modal-body {
+        padding: 16px 18px;
+        flex: 1;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .modal-foot {
+        padding: 10px 18px;
+        border-top: 1px solid var(--pm-border);
+        display: flex;
+        gap: 6px;
+        justify-content: flex-end;
+    }
+
+    .mform-group {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .mform-group label {
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--pm-text2);
+    }
+
+    .mform-group input,
+    .mform-group select,
+    .mform-group textarea {
+        background: var(--pm-bg);
+        border: 1px solid var(--pm-border);
+        border-radius: var(--pm-radius);
+        color: var(--pm-text);
+        font-size: 12px;
+        padding: 7px 10px;
+        outline: none;
+        font-family: var(--pm-font);
+        transition: border-color .15s;
+        width: 100%;
+    }
+
+    .mform-group input:focus,
+    .mform-group select:focus,
+    .mform-group textarea:focus {
+        border-color: var(--pm-orange);
+    }
+
+    .mform-group textarea {
+        resize: vertical;
+        min-height: 60px;
+        font-family: var(--pm-mono);
+        font-size: 11px;
+    }
+
+    .mform-group select option {
+        background: var(--pm-surface);
+    }

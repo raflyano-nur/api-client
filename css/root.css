@@ -1,0 +1,54 @@
+/* ─── POSTMAN-STYLE THEME ─── */
+    :root {
+        --pm-bg: #1c1c1c;
+        --pm-surface: #242424;
+        --pm-surface2: #2c2c2c;
+        --pm-surface3: #333333;
+        --pm-border: #3a3a3a;
+        --pm-border2: #444444;
+
+        --pm-text: #e8e8e8;
+        --pm-text2: #a8a8a8;
+        --pm-text3: #686868;
+
+        --pm-orange: #ff6c37;
+        --pm-orange2: #e85d2a;
+
+        --pm-GET: #6bbd5b;
+        --pm-POST: #f5a623;
+        --pm-PUT: #4a9eff;
+        --pm-PATCH: #c97bff;
+        --pm-DELETE: #f85149;
+
+        --pm-green: #6bbd5b;
+        --pm-blue: #4a9eff;
+        --pm-red: #f85149;
+        --pm-yellow: #f5a623;
+        --pm-purple: #c97bff;
+
+        --pm-radius: 4px;
+        --pm-font: 'Inter', sans-serif;
+        --pm-mono: 'JetBrains Mono', monospace;
+
+        --sidebar-w: 260px;
+        --topbar-h: 40px;
+        --tab-h: 34px;
+        --reqbar-h: 48px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        height: 100%;
+        overflow: hidden;
+        font-family: var(--pm-font);
+        font-size: 12px;
+        background: var(--pm-bg);
+        color: var(--pm-text);
+        -webkit-font-smoothing: antialiased;
+    }

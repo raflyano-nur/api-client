@@ -1,0 +1,114 @@
+    /* ─── TOPBAR ─── */
+    .topbar {
+        height: var(--topbar-h);
+        background: #191919;
+        border-bottom: 1px solid #111;
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+        gap: 10px;
+        flex-shrink: 0;
+        z-index: 100;
+    }
+
+    .logo-pm {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+    }
+
+    .logo-icon {
+        width: 22px;
+        height: 22px;
+        background: var(--pm-orange);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .logo-icon svg {
+        width: 13px;
+        height: 13px;
+        fill: #fff;
+    }
+
+    .logo-name {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--pm-text);
+        letter-spacing: -0.2px;
+    }
+
+    .topbar-sep {
+        width: 1px;
+        height: 20px;
+        background: var(--pm-border);
+        margin: 0 4px;
+    }
+
+    .topbar-btn {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 4px 10px;
+        border-radius: var(--pm-radius);
+        border: 1px solid transparent;
+        background: transparent;
+        color: var(--pm-text2);
+        cursor: pointer;
+        font-size: 11px;
+        font-family: var(--pm-font);
+        transition: all .15s;
+        white-space: nowrap;
+        height: 26px;
+        text-decoration: none;
+    }
+
+    .topbar-btn:hover {
+        background: var(--pm-surface2);
+        color: var(--pm-text);
+    }
+
+    .topbar-btn.accent {
+        background: var(--pm-orange);
+        color: #fff;
+        border-color: var(--pm-orange);
+    }
+
+    .topbar-btn.accent:hover {
+        background: var(--pm-orange2);
+    }
+
+    .topbar-btn svg {
+        width: 13px;
+        height: 13px;
+        flex-shrink: 0;
+    }
+
+    .topbar-actions {
+        margin-left: auto;
+        display: flex;
+        gap: 6px;
+        align-items: center;
+    }
+
+    .shortcut-hint {
+        font-size: 10px;
+        color: var(--pm-text3);
+        display: flex;
+        align-items: center;
+        gap: 3px;
+    }
+
+    .shortcut-hint kbd {
+        background: var(--pm-surface2);
+        border: 1px solid var(--pm-border);
+        border-radius: 3px;
+        padding: 1px 5px;
+        font-size: 9px;
+        font-family: var(--pm-mono);
+        color: var(--pm-text2);
+    }

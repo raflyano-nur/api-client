@@ -160,16 +160,10 @@ if ($isBinary) {
         'size'        => strlen($responseBody),
     ]);
 } else {
-    if (json_decode($responseBody) !== null) {
-      $prettyBody = json_decode($responseBody, true);
-    } else {
-      $prettyBody = $responseBody;
-    }
-
     echo json_encode([
         'status'  => $httpCode,
         'time'    => $totalTime,
-        'body'    => $prettyBody,
+        'body'    => $responseBody,
         'headers' => $parsedHeaders,
         'size'    => strlen($responseBody),
     ]);

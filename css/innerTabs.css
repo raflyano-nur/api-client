@@ -1,0 +1,58 @@
+/* ─── INNER TABS ─── */
+    .inner-tabs {
+        display: flex;
+        align-items: stretch;
+        background: var(--pm-surface);
+        border-bottom: 1px solid var(--pm-border);
+        padding: 0 8px;
+        flex-shrink: 0;
+        height: 32px;
+    }
+
+    .itab {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 0 10px;
+        cursor: pointer;
+        color: var(--pm-text3);
+        font-size: 11px;
+        font-weight: 500;
+        border-bottom: 2px solid transparent;
+        transition: all .15s;
+        white-space: nowrap;
+        user-select: none;
+    }
+
+    .itab:hover {
+        color: var(--pm-text2);
+    }
+
+    .itab.active {
+        color: var(--pm-orange);
+        border-bottom-color: var(--pm-orange);
+    }
+
+    .itab-count {
+        font-size: 9px;
+        background: var(--pm-surface2);
+        padding: 1px 5px;
+        border-radius: 8px;
+        color: var(--pm-text3);
+    }
+
+    .itab.active .itab-count {
+        background: rgba(255, 108, 55, .2);
+        color: var(--pm-orange);
+    }
+
+    .tab-pane {
+        display: none;
+        flex: 1;
+        overflow-y: auto;
+        flex-direction: column;
+    }
+
+    .tab-pane.active {
+        display: flex;
+    }
