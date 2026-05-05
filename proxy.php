@@ -105,6 +105,19 @@ if (in_array($method, ['POST', 'PUT', 'PATCH', 'DELETE']) && $body !== null) {
         // raw JSON
         $jsonBody = is_array($body) ? json_encode($body) : (string)$body;
         curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonBody);
+    
+        // Pastikan Content-Type: application/json terkirim
+        $hasContentType = false;
+        foreach ($curlHeaders as $h) {
+            if (stripos($h, 'content-type:') === 0) {
+                $hasContentType = true;
+                break;
+            }
+        }
+        if (!$hasContentType) {
+            $curlHeaders[] = 'Content-Type: application/json';
+        }
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $curlHeaders);
     }
 }
 
