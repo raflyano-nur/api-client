@@ -1099,12 +1099,16 @@
         if (['POST', 'PUT', 'PATCH', 'DELETE'].includes(method) && bodyMode !== 'none') {
             if (bodyMode === 'json' || bodyMode === 'raw') {
                 const raw = applyEnv(document.getElementById('bodyJson')?.value.trim() || '');
-                try {
-                    body = JSON.parse(raw);
-                } catch {
-                    body = raw;
+                if (bodyMode === 'json') {
+                    try {
+                        JSON.parse(raw); // validasi saja
+                    } catch {
+                        toast('⚠ Body bukan JSON valid', 'error');
+                        return;
+                    }
+                    headers['Content-Type'] = 'application/json';
                 }
-                if (bodyMode === 'json') headers['Content-Type'] = 'application/json';
+                body = raw; // kirim sebagai string mentah
             } else {
                 body = {};
                 for (const [k, v] of Object.entries(getKvObj('formRows'))) body[k] = applyEnv(v);
