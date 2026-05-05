@@ -777,6 +777,7 @@
             ta.style.flex = '1';
             bc.appendChild(ta);
             if (tab?.body) setTimeout(() => {
+                // Dulu: JSON.stringify(JSON.parse(tab.body)) → merusak komentar yang sudah distrip
                 ta.value = typeof tab.body === 'string' ? tab.body : JSON.stringify(tab.body, null, 2);
             }, 10);
         } else if (bodyMode === 'formdata' || bodyMode === 'urlencoded') {
@@ -1099,16 +1100,26 @@
         if (['POST', 'PUT', 'PATCH', 'DELETE'].includes(method) && bodyMode !== 'none') {
             if (bodyMode === 'json' || bodyMode === 'raw') {
                 const raw = applyEnv(document.getElementById('bodyJson')?.value.trim() || '');
+                
                 if (bodyMode === 'json') {
+                    // Strip komentar // dan /* */ sebelum validasi & kirim
+                    const stripped = raw
+                        .replace(/\/\/[^\n\r]*/g, '')       // hapus komentar //
+                        .replace(/\/\*[\s\S]*?\*\//g, '')    // hapus komentar /* */
+                        .replace(/,\s*([}\]])/g, '$1')       // hapus trailing comma
+                        .trim();
+                    
                     try {
-                        JSON.parse(raw); // validasi saja
+                        JSON.parse(stripped); // validasi saja
                     } catch {
-                        toast('⚠ Body bukan JSON valid', 'error');
+                        toast('⚠ Body bukan JSON valid (cek sintaks)', 'error');
                         return;
                     }
                     headers['Content-Type'] = 'application/json';
+                    body = stripped; // kirim yang sudah bersih
+                } else {
+                    body = raw;
                 }
-                body = raw; // kirim sebagai string mentah
             } else {
                 body = {};
                 for (const [k, v] of Object.entries(getKvObj('formRows'))) body[k] = applyEnv(v);
